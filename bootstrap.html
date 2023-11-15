@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estructura basica</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+<!-- Hover animation -->
+    <link href="css/hover.css" rel="stylesheet" media="all">
+    <!-- AOS animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- icon bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- icon fontawesome -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha384-dfLk6B+7Yq5dWDWoJTNEe/5IweyfDY5O6Y2H6CEXdShAhoHBbD6J5Ckk2Ib2fFpi" crossorigin="anonymous"> -->
+
+    <!-- font awesome -->
+
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <style>
+        
+        /* CONFIG GLOBAL */
+        body{
+            width: 100vw;
+            margin: 0;
+            overflow-x: auto;
+            overflow-x: hidden;
+        }
+
+        .wp {
+            width: 5rem;
+            position: fixed;
+            z-index: 99;
+            bottom: 0;
+            right: 0;
+            margin: 20px;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+            filter: grayscale(0.4);
+            
+        }
+        @keyframes shake-phone {
+            0% {
+                transform: translateX(0) rotate(0);
+            }
+            25% {
+                transform: translateX(-5px) rotate(-5deg);
+            }
+            50% {
+                transform: translateX(5px) rotate(5deg);
+            }
+            75% {
+                transform: translateX(-5px) rotate(-5deg);
+            }
+            100% {
+                transform: translateX(0) rotate(0);
+            }
+        }
+
+        .wp:hover {
+            animation: shake-phone 0.5s ease-in-out;
+            scale: 1.1;
+            filter: grayscale(0);
+            transition: 0.5s;
+        }
+        /* ///////HEADER////////  */
+        
+        /* FONDO */
+        body .navbar{
+            background: rgb(24, 24, 24);
+            position: fixed;
+            z-index: 99;
+            width: 100%;
+            top: 0;
+            transition: 1s;
+        }
+        /* LOGO */
+        body .navbar .navbar-brand{
+            color: red;
+        }
+        /* color texto header */
+        .navbar-collapse .navbar-nav .nav-item .nav-link{
+            color: rgb(136, 74, 222);
+        }
+        .navbar-collapse .navbar-nav .nav-item .btn{
+            border-radius: 20px;
+        }
+        
+
+        /* extra */
+        /* HEADER OFERTA CON ANIMACION*/
+        .top-header {
+            background: rgba(0,0,0,0.5);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            position: fixed;
+            height: 1.2rem;
+        }
+        .top-header p{
+            margin-top: -12px;
+        }
+
+        /* Para el párrafo que se mueve horizontalmente */
+        .scrolling-text {
+            white-space: nowrap;
+            overflow: hidden;
+            animation: scroll 15s linear infinite;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+        /* fin HEADER OFERTA CON ANIMACION*/
+
+
+/* //////////////////////////// */
+        /* MAIN 1 */
+
+        .home{
+            width: 100%;
+        }
+
+        /* Cambiar color de fondo y tamaño de flechas */
+        .carousel-control-prev, .carousel-control-next {
+            width: 30%; /* Ajusta el tamaño del área de clic para las flechas */
+            background: rgba(0, 0, 0, 0); /* Cambia el color de fondo de las flechas */
+            color: #fff; /* Cambia el color de las flechas */
+        }
+
+        /* Cambiar color de fondo de las flechas al pasar el ratón */
+        .carousel-control-prev:hover, .carousel-control-next:hover {
+            background-color: rgba(0, 0, 0, 0);
+            /* background-image: linear-gradient(90deg, #000000 0%, #7f8c8d 74%); */
+        }
+
+        /* Cambiar tamaño de las flechas */
+        .carousel-control-prev-icon, .carousel-control-next-icon {
+            font-size: 2rem; /* Ajusta el tamaño de las flechas */
+            display: none;
+        }
+
+        /* contenedor padre */
+
+        .overlay-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin: 0;
+            height: 100%;
+        }
+
+        /* contenedor flechas e imagenes */
+        .row.overlay {
+            margin-top: 5rem;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+        }
+        /* imagenes del carrusel */
+        .carousel-item img {
+            height: 100vh;
+            width: 100%; 
+            object-fit: cover;
+        }
+
+        .container-btn{
+            margin-top: 2rem;
+        }
+        .container-btn a{
+            border-radius: 50%;
+            scale: 1.2;
+            margin: 1rem;
+        }
+        .container-btn a i{
+            scale: 1.5;
+        }
+
+
+/* EMPRESA */
+.empresa{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.empresaTitulo{
+    margin-top: -5rem;
+}
+.empresaImgTxt{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.empresaTexto{
+    display: flex;
+    border: 2px solid gray;
+    border-radius: 10px;
+    margin-top: 1rem;
+    margin-left: 0.5rem;
+    margin-right: 2rem;
+}
+.empresaImg{
+    margin-top: 1rem;
+    margin-right: 0.5rem;
+    border-radius: 10px;
+    width: 100%; 
+    object-fit: cover;
+    margin-left: 2rem;
+
+}
+/* ///////////////// */
+
+
+/*///////// SERVICIOS */
+        .content-card{
+            /* border: 2px solid red; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card{
+            background: rgb(50, 49, 50);
+            height: 100%;
+            margin-bottom: 2rem;
+        }
+        .card h5, .card p{
+            color: white;
+        }
+        
+.card-img-top{
+    width: 100%;
+    height: auto;
+}
+/* TITULO CARD */
+.card-title{
+    /* border: 2px solid violet; */
+    height: 2rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+.card-title h5{
+    text-align: center;
+}
+/* TEXTO CARD */
+.card-text{
+    height: 12rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    /* border: 2px solid blue; */
+}
+/* BOTON CARD */
+.btn-container {
+    height: 3rem;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    /* border: 2px solid red; */
+}
+
+.btn-card {
+    width: 100%; 
+    height: 40px;
+}
+
+
+/* CONTACTO */
+.fa-brands{
+    scale: 2;
+    margin-right: 1rem;
+    cursor: pointer;
+}
+.fa-brands:hover{
+    color: blueviolet;
+}
+
+.content-contact{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 10px;
+    border-radius: 10px;
+    background: #ececec;
+}
+.content-contact p, .content-contact a{
+    margin: 10px;
+}
+.content-contact a{
+    margin-top: -1rem;
+}
+.content-contact .icon-contact{
+    display: flex;
+    margin-top: 1rem;
+}
+
+@media (max-width:1200px){
+    /* SERVICIOS */
+        .card-text p{
+            font-size: 0.9rem;
+        }
+        .card-title h5{
+            font-size: 1rem;
+        }
+    /* /// */
+
+}
+        @media (max-width: 767px) {
+            .row.overlay h3, .row.overlay h1 {
+                font-size: 1.5rem;
+            }
+            .row.overlay h3{
+                font-size: 1rem;
+            }
+            .navbar-nav li{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .navbar-nav li:hover{
+                background: gray;
+                cursor: pointer;
+                border-radius: 10px;
+            }
+            /* color del texto */
+            #navbarNav .navbar-nav .nav-item a {
+                color: rgb(240, 240, 240);
+                width: 100%;
+                text-align: center;
+            }
+            #navbarNav .navbar-nav .nav-item a:hover {
+                color: rgb(197, 4, 4);
+            }
+        /* SERVICIOS */
+        .card-text p{
+            font-size: 1.2rem;
+        }
+        .card-title h5{
+            font-size: 2rem;
+        }
+        /* /// */
+
+        }
+/* SERVICIOS */
+.servicios{
+    margin-bottom: 10rem;
+}
+/* CONTACTO */
+/* formulario */
+.contactoFormulario{
+    border-radius: 10px;
+}
+.contactoFormulario p{
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+        /* Footer */
+
+
+.footer{
+  position:relative;
+  width:100%;
+  height: 6rem;
+  background:#23282d;
+}
+
+.footer .margin{
+  position:relative;
+  width:900px;
+  margin:0 auto;
+  height:90px;
+}
+
+.footer .margin .menu-footer{
+  width:450px;
+  margin:0 auto;
+  float:left;
+}
+
+
+.footer .margin .menu-footer a{
+  line-height:90px;
+  padding-right:25px;
+  color:#5f666e;
+  -webkit-transition: all 0.2s ease-in;
+	-moz-transition: all 0.2s ease-in;
+	-ms-transition: all 0.2s ease-in;
+	-o-transition: all 0.2s ease-in;
+	transition: all 0.2s ease-in;
+}
+
+.footer .margin .menu-footer a:hover{
+  color:white;
+}
+
+
+.footer .margin .copyright{
+  width:420px;
+  margin:0 auto;
+  text-align:right;
+  float:left;
+  line-height:90px;
+  padding-right:25px;
+  color:#5f666e;
+}
+
+.contactoFormulario{
+    background: #ececec;
+}
+
+iframe{
+    width: 80%;
+}
+
+.mensajeWp{
+    width: 18rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: rgb(58, 58, 58);
+    background: #ebf8d6;
+    z-index: 99;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 5px;
+    border-radius: 20px;
+    border-bottom-right-radius: 0;
+    margin-right: -20rem;
+    margin-bottom: 2rem;
+    padding-left: 1rem;
+    border: 1px solid rgb(198, 198, 198);
+    transition: 0.5s;
+}
+
+#header .header-scroll {
+    background-color: red;
+}
+
+
+
+    </style>
+</head>
+<body>
+    <p class="mensajeWp" id="mensajeWp">Hola! en que te puedo ayudar?</p>
+    <a href="#" class="wp" id="wp">
+        <img src="./wp.png" style="
+            width: 4rem;
+            " alt="wp">
+    </a>
+
+
+    
+
+    <div class="navbar navbar-expand-lg navbar-light header" id="header">
+        <a href="#" class="navbar-brand">LOGO</a>
+        <button class="navbar-toggler"
+        style="
+        color: white; 
+        background-color: rgb(48, 48, 48);"
+        type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <!-- <span class="navbar-toggler-custom"></span> -->
+            <i class="bi bi-list"></i>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link active" href="#home">HOME</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="#empresa">NOSOTROS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#servicios">SERVICIOS</a>
+                </li>
+                <!-- <li class="nav-item">
+                    <a class="nav-link" href="#servicios">PORTFOLIO</a>
+                </li> -->
+                <!-- <li class="nav-item">
+                    <a class="nav-link" href="#servicios">CLIENTES</a>
+                </li> -->
+                <!-- <li class="nav-item">
+                    <a class="nav-link" href="#contacto">CONTACTO</a>
+                </li> -->
+                <li class="nav-item">
+                    <a href="#contacto">
+                        <button class="btn btn-primary ml-2">Contactanos</button>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+        <!--HEADER OFERTA  -->
+    <!-- <div class="top-header">
+        <p class="scrolling-text">Descuento</p>
+    </div> -->
+
+
+
+<section id="home" class="home">
+
+    <div class="container-fluid position-relative" style="margin: 0; padding: 0;">
+
+        <div class="row overlay" >
+            <div class="col-md-8 offset-md-2 text-center">
+
+                <div class="carousel-caption position-absolute top-50 start-50 translate-middle overlay-container" >
+                    <h1 data-aos="fade-down" data-aos-duration="3000">Título del Carrusel</h1>
+                    <h3 data-aos="fade-up" data-aos-duration="1000">Subtítulo del Carrusel</h3>
+                    <div class="container-btn">
+                        <a href="#" class="btn btn-secondary target="_blank" rel="noopener noreferrer" data-aos="fade-right" data-aos-duration="2000" >
+                            <i  class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" 
+                        class="btn btn-secondary 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        data-aos="fade-up" 
+                        data-aos-duration="2000" >
+                                <i  class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" 
+                        class="btn btn-secondary 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        data-aos="fade-up" 
+                        data-aos-duration="2000">
+                            <i  class="fab fa-whatsapp"></i>
+                        </a>
+
+                        <a href="#" 
+                        class="btn btn-secondary 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        data-aos="fade-left" 
+                        data-aos-duration="2000">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+                
+
+            </div>
+        </div>
+
+        <div id="carouselExample" class="carousel slide mt-3" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExample" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExample" data-slide-to="1"></li>
+                <li data-target="#carouselExample" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner" style="height: 100vh;">
+                <div class="carousel-item active" >
+                    <img src="https://via.placeholder.com/1920x1080" class="d-block w-100" alt="imagen1">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://via.placeholder.com/1920x1080" class="d-block w-100" alt="imagen2">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://via.placeholder.com/1920x1080" class="d-block w-100" alt="imagen3">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExample" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+    
+</section>
+
+
+    <section id="empresa" class="mt-5 empresa">
+        <h1 data-aos="fade-down" data-aos-duration="2000" class="text-center mb-0 empresaTitulo">¿QUIÉNES SOMOS?</h1>
+        <div class="d-flex empresaImgTxt">
+            <img src="https://via.placeholder.com/800x400" alt="Imagen de la empresa" class="empresaImg img-fluid" style="max-width: 100%;" data-aos="fade-right" data-aos-duration="1500">
+
+            <div class="empresaTexto d-flex flex-column align-items-start p-3" data-aos="fade-left" data-aos-duration="1200">
+                <h3 data-aos="fade-left" data-aos-duration="1000">Nombre Empresa</h3>
+                <p data-aos="fade-left" data-aos-duration="1500">Somos una empresa en soluciones digitales, dedicada a transformar tus ideas en realidades digitales impactantes. Nos especializamos en la creación de aplicaciones web personalizadas incluyendo edición de video, diseño gráfico y animaciones 2D/3D </p>
+                <a href="#contacto" target="_blank" rel="noopener noreferrer">
+                    <button data-aos="fade-left" data-aos-duration="2000" class="btn btn-primary mr-2">Contáctanos</button>
+                </a>
+                
+            </div>
+        </div>
+    </section>
+
+
+    <section id="servicios" class="servicios">
+
+        <div class="container mt-5">
+            <h1 data-aos="fade-down" data-aos-duration="2000" class="text-center mb-4">¿QUÉ SERVICIO NECESITAS HOY?</h1>
+            
+            <div class="row content-card">
+                <div class="col-md-5 col-lg-3">
+                    <div class="card" data-aos="fade-down" data-aos-duration="3000" >
+                        <img src="https://via.placeholder.com/500x500" class="card-img-top" alt="card1">
+                        <div class="card-body">
+                            <div class="card-title">
+                                <h5>
+                                    DESARROLLO WEB
+                                </h5>
+                            </div>
+                            <div class="card-text">
+                                <p>Contamos con + de 20 años de experiencia en el mercado del desarrollo web. Realizamos webs autoadministrables ajustadas a la necesidad de cada cliente</p>
+                            </div>
+                            <div class="btn-container align-self-stretch">
+                                <a href="#" class="btn btn-primary btn-card">VER SERVICIO</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5 col-lg-3">
+                    <div class="card" data-aos="fade-down" data-aos-duration="1500" >
+                        <img src="https://via.placeholder.com/500x500" class="card-img-top" alt="card2">
+                        <div class="card-body">
+                            <div class="card-title">
+                                <h5>
+                                    DISEÑO GRÁFICO
+                                </h5>
+                            </div>
+                                <div class="card-text">
+                                    <p>
+                                        Contamos con servicio de diseño gráfico, para que nuestros clientes puedan desarrollar su negocio, logrando identidades potentes a la hora de mejorar sus ventas.
+                                    </p>
+                                </div>
+                            <div class="btn-container align-self-stretch">
+                                <a href="#" class="btn btn-primary btn-card">VER SERVICIO</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5 col-lg-3">
+                    <div class="card" data-aos="fade-up" data-aos-duration="1500" >
+                        <img src="https://via.placeholder.com/500x500" class="card-img-top" alt="card3">
+                        <div class="card-body">
+                            <div class="card-title">
+                                <h5>
+                                    EDICIÓN DE VIDEO
+                                </h5>
+                            </div>
+                            <div class="card-text">
+                                <p>
+                                    Producción y edición de videos creativos, diseñados especificamente para estrategias de marketing y publicidad, con diferentes formatos para tus redes sociales.
+                                </p>
+                            </div>
+                            <div class="btn-container align-self-stretch">
+                                <a href="#" class="btn btn-primary btn-card">VER SERVICIO</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5 col-lg-3">
+                    <div class="card" data-aos="fade-up" data-aos-duration="3000" >
+                        <img src="https://via.placeholder.com/500x500" class="card-img-top" alt="card3">
+                        <div class="card-body">
+                            <div class="card-title">
+                                <h5>
+                                    ANIMACIONES 2D/3D
+                                </h5>
+                            </div>
+                            <div class="card-text">
+                                <p>
+                                    Trabajamos con animaciones tanto en 3D como en 2D destinadas para publicidad, redes sociales e incorporarlo al sitio web
+                                </p>
+                            </div>
+                            <div class="btn-container align-self-stretch">
+                                <a href="#" class="btn btn-primary btn-card">VER SERVICIO</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" style="
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    ">
+    <div class="container mt-5">
+        <div class="row justify-content-center" style="margin-top: 5rem;">
+            <div class="col-md-12">
+                <!-- titulo -->
+                <!-- <h1 class="text-center">Contactanos</h1> -->
+                <h1 data-aos="fade-down" data-aos-duration="2000" class="text-center mb-0 empresaTitulo">ESTAMOS A TU DISPOSICIÓN</h1>
+                <div class="form-group">
+            <iframe data-aos="fade-down" data-aos-duration="3000"  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.1366237211996!2d-58.39759278841568!3d-34.6007065728426!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccabfe23f5e3b%3A0x6f90fe1eadb235cf!2sMuseo%20del%20Agua%20y%20de%20la%20Historia%20Sanitaria!5e0!3m2!1ses!2sar!4v1692223895975!5m2!1ses!2sar"  style="border:0; width: 100%; margin-top: 2rem;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+    
+                <div class="form-group">
+                    
+                    <div class="row">
+                        
+                        <div data-aos="fade-right" data-aos-duration="3000"  class="col contactoFormulario" 
+                        >
+                            <p>Contáctanos</p>
+                            <div class="container-formulario">
+                                <form class="formulario">
+                                    <div class="form-group">
+                                        <label for="name">Nombre</label>
+                                        <input type="text" class="form-control" id="name" name="nombre" placeholder="Nombre" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="apellido">Apellido</label>
+                                        <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellido" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email">Email</label>
+                                        <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="comentario">Comentario</label>
+                                        <textarea class="form-control" id="comentario" name="comentario" cols="60" rows="3" placeholder="Sobre qué quieres hablar?" style="resize: none;"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="reset" class="btn btn-secondary">Limpiar Formulario</button>
+                                        <button type="submit" class="btn btn-primary">Enviar Formulario</button>
+                                    </div>
+                                </form>
+                            </div>
+                            
+                        </div>
+
+                        <div data-aos="fade-left" data-aos-duration="3000" class="col  datosEmpresa" 
+                        style="
+                        height: 35rem;">
+                            <div class="content-contact">
+                                <p>Dirección</p>
+                                <a href="#">
+                                    calle falsa, Ciudad Autónoma de Buenos Aires, C14163B2K Argentina.
+                                </a>
+                            </div>
+
+                            <div class="content-contact">
+                                <p>Horarios de atención</p>
+                                <p>Lunes a Viernes de 8hrs a 18hrs.</p>
+                                <p>Sábados de 8hrs a 13hrs.</p>
+                            </div>
+                            <div class="content-contact">
+                                <p>Teléfono</p>
+                                <a href="#">+54 11 1234-4567</a>
+                            </div>
+                            <div class="content-contact">
+                                <p>Email</p>
+                                <a href="#">~info@pagina.com.ar</a>
+                            </div>
+                            <div  class="content-contact" style="
+                            height: 11rem;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            ">
+                                <p>Síganos en:</p>
+                                <div class="icon-contact" style="margin-bottom: 3rem;">
+                                    <a href="#" style="color: black;">
+                                        <i class="fa-brands fa-facebook"></i>
+                                    </a>
+                                    <a href="#" style="color: black;">
+                                        <i class="fa-brands fa-whatsapp"></i>
+                                    </a>
+                                    <a href="#" style="color: black;">
+                                        <i class="fa-brands fa-instagram"></i>
+                                    </a>
+                                    <a href="#" style="color: black;">
+                                        <i class="fa-brands fa-twitter"></i>
+                                    </a>
+                                    <a href="#" style="color: black;">
+                                        <i class="fa-brands fa-tiktok"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    </section>
+    
+
+
+
+
+    <section class="footer" style="margin-top: 10rem;">
+    
+        <div class="margin">
+        
+          <div class="menu-footer">
+          
+          <a href="#home">Home</a>
+          <a href="#">Privacy policy</a>
+          <a href="#">RSS</a>
+          <a href="#">Facebook</a>
+          
+          </div>
+          
+            <div class="copyright">© 2023. All Rights Reserved Franco Ezequiel Romero</div>        
+  
+        </div>
+      
+      
+      </section>    
+      
+
+
+
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+
+    <!-- AOS animation -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <!-- Fin AOS animation -->
+    <script>
+        const wp = document.getElementById('wp');
+        
+        window.addEventListener('scroll', function(){
+            let header = document.getElementById('header');
+            // alert('prueba')
+        })
+        
+        // mensajito de whatsapp
+        let mensajeWp = document.getElementById('mensajeWp');
+        wp.addEventListener('mouseover', function(){
+            mensajeWp.style.marginRight = '7rem';
+        })
+
+        wp.addEventListener('mouseout', function(){
+            mensajeWp.style.marginRight = '-20rem';
+        })
+    </script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
