@@ -469,7 +469,7 @@ iframe{
 <body>
     <p class="mensajeWp" id="mensajeWp">Hola! en que te puedo ayudar?</p>
     <a href="#" class="wp" id="wp">
-        <img src="./wp.png" style="
+        <img src="./assets/img/wp.png" style="
             width: 4rem;
             " alt="wp">
     </a>
@@ -856,14 +856,23 @@ iframe{
     </script>
     <!-- Fin AOS animation -->
     <script>
-        const wp = document.getElementById('wp');
         
         window.addEventListener('scroll', function(){
             let header = document.getElementById('header');
-            // alert('prueba')
-        })
+            let scroll = window.scrollY;
+            if(scroll > 100){
+                // header.style.background = 'rgb(24, 24, 24)';
+                header.style.background = 'gray';
+                header.style.scale = '1.015';
+            }
+            else{
+                header.style.background = 'rgb(24, 24, 24)';
+                header.style.scale = '1';
+            }
+        });
         
         // mensajito de whatsapp
+        const wp = document.getElementById('wp');
         let mensajeWp = document.getElementById('mensajeWp');
         wp.addEventListener('mouseover', function(){
             mensajeWp.style.marginRight = '7rem';
