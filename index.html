@@ -33,6 +33,10 @@
     <style>
         
         /* CONFIG GLOBAL */
+        :root{
+            --colorPrimario:  ;
+            --colorSecundario: background: rgb(215, 68, 68);
+        }
         body{
             width: 100vw;
             margin: 0;
@@ -89,9 +93,10 @@
         }
         /* LOGO */
         body .navbar .navbar-brand{
-            color: red;
+            color: rgb(29, 29, 29);
             font-family: 'Orbitron', sans-serif;
         }
+
         /* color texto header */
         .navbar-collapse .navbar-nav .nav-item .nav-link{
             color: rgb(185, 185, 185);
@@ -228,6 +233,7 @@
 }
 .empresaTitulo{
     margin-top: -5rem;
+    color: white;
 }
 .empresaImgTxt{
     width: 100%;
@@ -237,11 +243,12 @@
 
 .empresaTexto{
     display: flex;
-    border: 2px solid gray;
+    border: none;
     border-radius: 10px;
     margin-top: 1rem;
     margin-left: 0.5rem;
     margin-right: 2rem;
+    background: rgb(35,106,183)
 }
 .empresaImg{
     margin-top: 1rem;
@@ -468,7 +475,7 @@ iframe{
 }
 
 .mensajeWp{
-    width: 18rem;
+    width: 20rem;
     font-size: 1rem;
     font-weight: 500;
     color: rgb(58, 58, 58);
@@ -529,7 +536,7 @@ iframe{
     </style>
 </head>
 <body>
-    <p class="mensajeWp" id="mensajeWp">Hola! en que te puedo ayudar? 😃</p>
+    <p class="mensajeWp" id="mensajeWp">Hola! en qué te podemos ayudar? 😃</p>
     <a href="#" class="wp" id="wp">
         <img src="./assets/img/wp.png" style="
             width: 4rem;
@@ -580,7 +587,10 @@ iframe{
                 </li> -->
                 <li class="nav-item">
                     <a href="#contacto">
-                        <button class="btn btn-primary ml-2">Contactanos</button>
+                        <button class="btn btn-primary ml-2" style="
+                            background: rgb(215, 68, 68);
+                            border: none;
+                            ">Cotizanos</button>
                     </a>
                 </li>
             </ul>
@@ -609,14 +619,17 @@ iframe{
                     width: 85%;
                     ">
 
-                        <h1 data-aos="fade-down" data-aos-duration="3000" style="text-align: start;">Agencia especializada en Desarrollo Web,Edición de video y Animaciones 2D, 3D para redes sociales y publicidad</h1>
+                        <h1 data-aos="fade-down" data-aos-duration="3000" style="
+                        text-align: start;
+                        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+                        ">Agencia especializada en Desarrollo Web,Edición de video y Animaciones 2D, 3D para redes sociales y publicidad</h1>
                         <h3 data-aos="fade-up" data-aos-duration="1000">Diseñaremos tus proyectos a tu estilo</h3>
                         <div class="container-btn">
-                            <a href="#" class="btn btn-secondary target="_blank" rel="noopener noreferrer" data-aos="fade-right" data-aos-duration="2000" >
+                            <a href="#" class="btn btn-info target="_blank" rel="noopener noreferrer" data-aos="fade-right" data-aos-duration="2000" >
                                 <i  class="fab fa-facebook"></i>
                             </a>
                             <a href="#" 
-                            class="btn btn-secondary 
+                            class="btn btn-info 
                             target="_blank" 
                             rel="noopener noreferrer" 
                             data-aos="fade-up" 
@@ -624,7 +637,7 @@ iframe{
                                     <i  class="fab fa-instagram"></i>
                             </a>
                             <a href="#" 
-                            class="btn btn-secondary 
+                            class="btn btn-info 
                             target="_blank" 
                             rel="noopener noreferrer" 
                             data-aos="fade-up" 
@@ -633,7 +646,7 @@ iframe{
                             </a>
     
                             <a href="#" 
-                            class="btn btn-secondary 
+                            class="btn btn-info 
                             target="_blank" 
                             rel="noopener noreferrer" 
                             data-aos="fade-left" 
@@ -684,11 +697,12 @@ iframe{
     <section id="empresa" class="mt-5 empresa">
         <h1 data-aos="fade-down" data-aos-duration="2000" class="text-center mb-0 empresaTitulo">¿QUIÉNES SOMOS?</h1>
         <div class="d-flex empresaImgTxt">
-            <img src="https://via.placeholder.com/800x400" alt="Imagen de la empresa" class="empresaImg img-fluid" style="max-width: 100%;" data-aos="fade-right" data-aos-duration="1500">
+            <img src="./assets/img/empresa.jpg" alt="Imagen de la empresa" class="empresaImg img-fluid" style="max-width: 100%;" data-aos="fade-right" data-aos-duration="1500">
 
             <div class="empresaTexto d-flex flex-column align-items-start p-3" data-aos="fade-left" data-aos-duration="1200">
-                <h3 data-aos="fade-left" data-aos-duration="1000">Nombre Empresa</h3>
-                <p data-aos="fade-left" data-aos-duration="1500">Somos una empresa en soluciones digitales, dedicada a transformar tus ideas en realidades digitales impactantes. Nos especializamos en la creación de aplicaciones web personalizadas incluyendo edición de video, diseño gráfico y animaciones 2D/3D </p>
+                <img src="./assets/img/ico.png" width="40" alt="">
+                <h3 data-aos="fade-left" data-aos-duration="1000" >Solución digital</h3>
+                <p data-aos="fade-left" data-aos-duration="1500">Somos una pequeña empresa que nos dedicamos a soluciones digitales, dedicada a transformar tus ideas en realidad. Nos especializamos en la creación de aplicaciones web personalizadas incluyendo edición de video, diseño gráfico y animaciones 2D/3D. </p>
                 <a href="#contacto" target="_blank" rel="noopener noreferrer">
                     <button data-aos="fade-left" data-aos-duration="2000" class="btn btn-primary mr-2">Contáctanos</button>
                 </a>
@@ -698,15 +712,15 @@ iframe{
     </section>
 
 
-    <section id="servicios" class="servicios">
+    <section id="servicios" class="servicios" >
 
         <div class="container mt-5">
-            <h1 data-aos="fade-down" data-aos-duration="2000" class="text-center mb-4">¿QUÉ SERVICIO NECESITAS HOY?</h1>
+            <h1 data-aos="fade-down" data-aos-duration="2000" class="text-center mb-4" style="color: white;">¿QUÉ SERVICIO NECESITAS HOY?</h1>
             
             <div class="row content-card">
                 <div class="col-md-5 col-lg-3">
                     <div class="card" data-aos="fade-down" data-aos-duration="3000" >
-                        <img src="https://via.placeholder.com/500x500" class="card-img-top" alt="card1">
+                        <img src="./assets/img/servicio1.jpg" class="card-img-top" alt="card1">
                         <div class="card-body">
                             <div class="card-title">
                                 <h5>
@@ -724,7 +738,7 @@ iframe{
                 </div>
                 <div class="col-md-5 col-lg-3">
                     <div class="card" data-aos="fade-down" data-aos-duration="1500" >
-                        <img src="https://via.placeholder.com/500x500" class="card-img-top" alt="card2">
+                        <img src="./assets/img/servicio2.jpg" class="card-img-top" alt="card2">
                         <div class="card-body">
                             <div class="card-title">
                                 <h5>
@@ -744,7 +758,7 @@ iframe{
                 </div>
                 <div class="col-md-5 col-lg-3">
                     <div class="card" data-aos="fade-up" data-aos-duration="1500" >
-                        <img src="https://via.placeholder.com/500x500" class="card-img-top" alt="card3">
+                        <img src="./assets/img/servicio3.jpg" class="card-img-top" alt="card3">
                         <div class="card-body">
                             <div class="card-title">
                                 <h5>
@@ -764,7 +778,7 @@ iframe{
                 </div>
                 <div class="col-md-5 col-lg-3">
                     <div class="card" data-aos="fade-up" data-aos-duration="3000" >
-                        <img src="https://via.placeholder.com/500x500" class="card-img-top" alt="card3">
+                        <img src="./assets/img/servicio4.jpg" class="card-img-top" alt="card3">
                         <div class="card-body">
                             <div class="card-title">
                                 <h5>
@@ -792,9 +806,13 @@ iframe{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background: url(./assets/img/fondo.png);
+    background-position: center;
+
+
     ">
     <div class="container mt-5">
-        <div class="row justify-content-center" style="margin-top: 5rem;">
+        <div class="row justify-content-center" style="margin-top: 10rem;">
             <div class="col-md-12">
                 <!-- titulo -->
                 <!-- <h1 class="text-center">Contactanos</h1> -->
@@ -943,11 +961,11 @@ iframe{
             let scroll = window.scrollY;
             if(scroll > 100){
                 logo.style.color = 'white';
-                header.style.background = 'rgb( 4, 70, 141)';
+                header.style.background = 'rgb( 23, 23, 23)';
                 header.style.scale = '1.015';
             }
             else{
-                header.style.background = 'rgba(24, 24, 24, 0)';
+                header.style.background = 'rgba(0, 0, 0, 0)';
                 header.style.scale = '1';
                 logo.style.color = 'black';
             }
