@@ -11,7 +11,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" rel="stylesheet">
     <link rel="icon" href="data:;base64,iVBORw0KGgo=">
 <!-- Hover animation -->
-    <link href="css/hover.css" rel="stylesheet" media="all">
+    <!-- <link href="css/hover.css" rel="stylesheet" media="all"> -->
     <!-- AOS animation -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
@@ -478,7 +478,7 @@ iframe{
     
 
     <div class="navbar navbar-expand-lg navbar-light header" id="header">
-        <a href="#" class="navbar-brand">LOGO</a>
+        <a href="#" class="navbar-brand logo" id="logo">LOGO</a>
         <button class="navbar-toggler"
         style="
         color: white; 
@@ -859,15 +859,18 @@ iframe{
         
         window.addEventListener('scroll', function(){
             let header = document.getElementById('header');
+            let logo = document.getElementById('logo');
+            let itemsHeader = document.querySelectorAll('nav-link');
             let scroll = window.scrollY;
             if(scroll > 100){
-                // header.style.background = 'rgb(24, 24, 24)';
+                logo.style.color = 'blue';
                 header.style.background = 'gray';
                 header.style.scale = '1.015';
             }
             else{
                 header.style.background = 'rgb(24, 24, 24)';
                 header.style.scale = '1';
+                logo.style.color = 'red';
             }
         });
         
