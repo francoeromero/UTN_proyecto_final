@@ -7,6 +7,13 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <!-- - -->
+
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" rel="stylesheet">
     <link rel="icon" href="data:;base64,iVBORw0KGgo=">
@@ -73,7 +80,7 @@
         
         /* FONDO */
         body .navbar{
-            background: rgb(24, 24, 24);
+            background: rgba(24, 24, 24, 0);
             position: fixed;
             z-index: 99;
             width: 100%;
@@ -83,10 +90,20 @@
         /* LOGO */
         body .navbar .navbar-brand{
             color: red;
+            font-family: 'Orbitron', sans-serif;
         }
         /* color texto header */
         .navbar-collapse .navbar-nav .nav-item .nav-link{
-            color: rgb(136, 74, 222);
+            color: rgb(185, 185, 185);
+            font-weight: bold
+            ;
+            font-family: sans-serif;
+        }
+        .navbar-collapse .navbar-nav .nav-item .nav-link:hover{
+            /* background: rgb(43, 43, 43);
+            border-radius: 10px; */
+            transition: 1s;
+            color: white;
         }
         .navbar-collapse .navbar-nav .nav-item .btn{
             border-radius: 20px;
@@ -135,6 +152,9 @@
         .home{
             width: 100%;
         }
+        .carousel{
+            margin: 0 !important;
+        }
 
         /* Cambiar color de fondo y tamaño de flechas */
         .carousel-control-prev, .carousel-control-next {
@@ -161,7 +181,7 @@
             position: relative;
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start;
             flex-direction: column;
             margin: 0;
             height: 100%;
@@ -169,7 +189,7 @@
 
         /* contenedor flechas e imagenes */
         .row.overlay {
-            margin-top: 5rem;
+            margin: 0;
             position: absolute;
             top: 0;
             right: 0;
@@ -185,6 +205,8 @@
         }
 
         .container-btn{
+            display: flex;
+            justify-content: flex-start;
             margin-top: 2rem;
         }
         .container-btn a{
@@ -331,6 +353,10 @@
 
 }
         @media (max-width: 767px) {
+            .container-btn {
+                width: 20rem;
+                scale: 0.9;
+            }
             .row.overlay h3, .row.overlay h1 {
                 font-size: 1.5rem;
             }
@@ -364,7 +390,9 @@
             font-size: 2rem;
         }
         /* /// */
-
+        .container-btn{
+            margin-left: -2rem;
+        }
         }
 /* SERVICIOS */
 .servicios{
@@ -374,13 +402,14 @@
 /* formulario */
 .contactoFormulario{
     border-radius: 10px;
+    height: 27rem;
 }
 .contactoFormulario p{
     text-align: center;
     font-size: 1.5rem;
 }
 
-        /* Footer */
+/* Footer */
 
 
 .footer{
@@ -464,10 +493,43 @@ iframe{
 
 
 
+/* LOGO */
+#logo img{
+    padding-right: 10px;
+}
+.textLogo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.textLogo h3{
+    margin-bottom: 1px;
+}
+.textLogo p{
+    font-family: sans-serif;
+    font-size: 0.8rem;
+    text-align: center;
+    color: rgb(138, 138, 138);
+}
+
+
+/* PARTICULAS */
+#particles-js{
+        background-color: #000000;
+        background-image: linear-gradient(-180deg, #000000 0%, #3b3e42 94%);
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        z-index: -1;
+    }
+
+
     </style>
 </head>
 <body>
-    <p class="mensajeWp" id="mensajeWp">Hola! en que te puedo ayudar?</p>
+    <p class="mensajeWp" id="mensajeWp">Hola! en que te puedo ayudar? 😃</p>
     <a href="#" class="wp" id="wp">
         <img src="./assets/img/wp.png" style="
             width: 4rem;
@@ -478,7 +540,15 @@ iframe{
     
 
     <div class="navbar navbar-expand-lg navbar-light header" id="header">
-        <a href="#" class="navbar-brand logo" id="logo">LOGO</a>
+        <a href="#" class="navbar-brand logo" id="logo" style="
+            display: flex;
+            ">
+            <img src="./assets/img/ico.png" style="width: 5rem;" alt="">
+            <div class="textLogo" style=" display: flex; flex-direction: column;">
+                <h3>Solución<b> DIGITAL</b></h3>
+                <p>Mejoramos tus Ventas</p>
+            </div>
+        </a>
         <button class="navbar-toggler"
         style="
         color: white; 
@@ -526,43 +596,51 @@ iframe{
 
 <section id="home" class="home">
 
-    <div class="container-fluid position-relative" style="margin: 0; padding: 0;">
+    <div class="container-fluid position-relative">
 
-        <div class="row overlay" >
-            <div class="col-md-8 offset-md-2 text-center">
+        <div class="row overlay" style="margin: 0;">
+            <div class="col-md-8 offset-md-2 " style="margin: 0;">
 
                 <div class="carousel-caption position-absolute top-50 start-50 translate-middle overlay-container" >
-                    <h1 data-aos="fade-down" data-aos-duration="3000">Título del Carrusel</h1>
-                    <h3 data-aos="fade-up" data-aos-duration="1000">Subtítulo del Carrusel</h3>
-                    <div class="container-btn">
-                        <a href="#" class="btn btn-secondary target="_blank" rel="noopener noreferrer" data-aos="fade-right" data-aos-duration="2000" >
-                            <i  class="fab fa-facebook"></i>
-                        </a>
-                        <a href="#" 
-                        class="btn btn-secondary 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
-                        data-aos="fade-up" 
-                        data-aos-duration="2000" >
-                                <i  class="fab fa-instagram"></i>
-                        </a>
-                        <a href="#" 
-                        class="btn btn-secondary 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
-                        data-aos="fade-up" 
-                        data-aos-duration="2000">
-                            <i  class="fab fa-whatsapp"></i>
-                        </a>
+                    <div class="titulos-redes" style="text-align: start;
+                    display: block;
+                    margin-left: 0rem;
+                    margin-top: 9rem;
+                    width: 85%;
+                    ">
 
-                        <a href="#" 
-                        class="btn btn-secondary 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
-                        data-aos="fade-left" 
-                        data-aos-duration="2000">
-                            <i class="fab fa-tiktok"></i>
-                        </a>
+                        <h1 data-aos="fade-down" data-aos-duration="3000" style="text-align: start;">Agencia especializada en Desarrollo Web,Edición de video y Animaciones 2D, 3D para redes sociales y publicidad</h1>
+                        <h3 data-aos="fade-up" data-aos-duration="1000">Diseñaremos tus proyectos a tu estilo</h3>
+                        <div class="container-btn">
+                            <a href="#" class="btn btn-secondary target="_blank" rel="noopener noreferrer" data-aos="fade-right" data-aos-duration="2000" >
+                                <i  class="fab fa-facebook"></i>
+                            </a>
+                            <a href="#" 
+                            class="btn btn-secondary 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            data-aos="fade-up" 
+                            data-aos-duration="2000" >
+                                    <i  class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" 
+                            class="btn btn-secondary 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            data-aos="fade-up" 
+                            data-aos-duration="2000">
+                                <i  class="fab fa-whatsapp"></i>
+                            </a>
+    
+                            <a href="#" 
+                            class="btn btn-secondary 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            data-aos="fade-left" 
+                            data-aos-duration="2000">
+                                <i class="fab fa-tiktok"></i>
+                            </a>
+                    </div>
                         
                     </div>
                 </div>
@@ -572,22 +650,23 @@ iframe{
         </div>
 
         <div id="carouselExample" class="carousel slide mt-3" data-ride="carousel">
-            <ol class="carousel-indicators">
+            <ol class="carousel-indicators" >
                 <li data-target="#carouselExample" data-slide-to="0" class="active"></li>
                 <li data-target="#carouselExample" data-slide-to="1"></li>
                 <li data-target="#carouselExample" data-slide-to="2"></li>
             </ol>
-            <div class="carousel-inner" style="height: 100vh;">
+            <div class="carousel-inner" style="height: 100vh; width: 100vw; margin-left: -1rem;">
                 <div class="carousel-item active" >
-                    <img src="https://via.placeholder.com/1920x1080" class="d-block w-100" alt="imagen1">
+                    <img src="./assets/img/img1.jpg" class="d-block w-100" alt="imagen1">
                 </div>
                 <div class="carousel-item">
-                    <img src="https://via.placeholder.com/1920x1080" class="d-block w-100" alt="imagen2">
+                    <img src="./assets/img/img2.jpg" class="d-block w-100" alt="imagen2">
                 </div>
                 <div class="carousel-item">
-                    <img src="https://via.placeholder.com/1920x1080" class="d-block w-100" alt="imagen3">
+                    <img src="./assets/img/img3.jpg" class="d-block w-100" alt="imagen3">
                 </div>
             </div>
+
             <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="sr-only">Previous</span>
@@ -734,12 +813,8 @@ iframe{
                             <div class="container-formulario">
                                 <form class="formulario">
                                     <div class="form-group">
-                                        <label for="name">Nombre</label>
-                                        <input type="text" class="form-control" id="name" name="nombre" placeholder="Nombre" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="apellido">Apellido</label>
-                                        <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellido" required>
+                                        <label for="name">Nombre y Apellido</label>
+                                        <input type="text" class="form-control" id="name" name="nombre" placeholder="Nombre y Apellido" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="email">Email</label>
@@ -782,13 +857,13 @@ iframe{
                                 <a href="#">~info@pagina.com.ar</a>
                             </div>
                             <div  class="content-contact" style="
-                            height: 11rem;
+                            height: 4rem;
                             display: flex;
                             justify-content: center;
                             align-items: center;
                             ">
                                 <p>Síganos en:</p>
-                                <div class="icon-contact" style="margin-bottom: 3rem;">
+                                <div class="icon-contact" style="margin-bottom: 10px;">
                                     <a href="#" style="color: black;">
                                         <i class="fa-brands fa-facebook"></i>
                                     </a>
@@ -822,7 +897,7 @@ iframe{
 
 
 
-    <section class="footer" style="margin-top: 10rem;">
+    <section class="footer">
     
         <div class="margin">
         
@@ -848,6 +923,10 @@ iframe{
     
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <!-- particulas -->
+    <div id="particles-js"></div>
+    <script src="./particles.min.js"></script>
+    <script src="./particlesjs.js"></script>
 
     <!-- AOS animation -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -863,14 +942,14 @@ iframe{
             let itemsHeader = document.querySelectorAll('nav-link');
             let scroll = window.scrollY;
             if(scroll > 100){
-                logo.style.color = 'blue';
-                header.style.background = 'gray';
+                logo.style.color = 'white';
+                header.style.background = 'rgb( 4, 70, 141)';
                 header.style.scale = '1.015';
             }
             else{
-                header.style.background = 'rgb(24, 24, 24)';
+                header.style.background = 'rgba(24, 24, 24, 0)';
                 header.style.scale = '1';
-                logo.style.color = 'red';
+                logo.style.color = 'black';
             }
         });
         
