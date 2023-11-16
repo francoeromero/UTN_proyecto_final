@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Estructura basica</title>
+    <title>Solución Digital</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
+    <link rel="icon" href="./assets/img/ico.png">
     <!-- font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -238,7 +238,9 @@
 .empresaImgTxt{
     width: 100%;
     display: flex;
+    flex-direction: row;
     justify-content: center;
+    align-items: center;
 }
 
 .empresaTexto{
@@ -246,17 +248,21 @@
     border: none;
     border-radius: 10px;
     margin-top: 1rem;
-    margin-left: 0.5rem;
+    width: 50%;
+    height: 95%;
+    margin-left: 1rem;
     margin-right: 2rem;
+    /* height: 22.5rem; */
     background: rgb(35,106,183)
 }
 .empresaImg{
+    margin-left: 1rem;
+    margin-right: 2rem;
     margin-top: 1rem;
-    margin-right: 0.5rem;
     border-radius: 10px;
-    width: 100%; 
+    width: 50%; 
     object-fit: cover;
-    margin-left: 2rem;
+
 
 }
 /* ///////////////// */
@@ -349,6 +355,49 @@
 }
 
 @media (max-width:1200px){
+    .container-btn {
+                width: 20rem;
+                scale: 0.9;
+            }
+            .row.overlay h3, .row.overlay h1 {
+                font-size: 1.5rem;
+            }
+            .row.overlay h3{
+                font-size: 1rem;
+            }
+            .navbar-nav li{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .navbar-nav li:hover{
+                background: gray;
+                cursor: pointer;
+                border-radius: 10px;
+            }
+            /* color del texto */
+            #navbarNav .navbar-nav .nav-item a {
+                color: rgb(240, 240, 240);
+                width: 100%;
+                text-align: center;
+            }
+            #navbarNav .navbar-nav .nav-item a:hover {
+                color: rgb(197, 4, 4);
+            }
+    /* EMPRESA */
+    .empresaImgTxt{
+        flex-direction: column;
+        align-items: center;
+
+    }
+    .empresaTexto{
+        margin-left: 0rem;
+        margin-right: 0rem;
+    }
+    .empresaImg{
+        margin-left: 0rem;
+        margin-right: 0rem;
+    }
     /* SERVICIOS */
         .card-text p{
             font-size: 0.9rem;
@@ -389,6 +438,13 @@
             #navbarNav .navbar-nav .nav-item a:hover {
                 color: rgb(197, 4, 4);
             }
+            /* EMPRESA */
+            .empresaTexto{
+        width: 25rem;
+        }
+        .empresaImg{
+            width: 25rem;
+        }
         /* SERVICIOS */
         .card-text p{
             font-size: 1.2rem;
@@ -422,7 +478,7 @@
 .footer{
   position:relative;
   width:100%;
-  height: 6rem;
+  height: 7rem;
   background:#23282d;
 }
 
@@ -437,6 +493,7 @@
   width:450px;
   margin:0 auto;
   float:left;
+
 }
 
 
@@ -552,7 +609,7 @@ iframe{
             ">
             <img src="./assets/img/ico.png" style="width: 5rem;" alt="">
             <div class="textLogo" style=" display: flex; flex-direction: column;">
-                <h3>Solución<b> DIGITAL</b></h3>
+                <h3 >Solución<b> DIGITAL</b></h3>
                 <p>Mejoramos tus Ventas</p>
             </div>
         </a>
@@ -656,7 +713,10 @@ iframe{
                     </div>
                         
                     </div>
+
                 </div>
+
+                <img src="" alt="">
                 
 
             </div>
@@ -697,17 +757,17 @@ iframe{
     <section id="empresa" class="mt-5 empresa">
         <h1 data-aos="fade-down" data-aos-duration="2000" class="text-center mb-0 empresaTitulo">¿QUIÉNES SOMOS?</h1>
         <div class="d-flex empresaImgTxt">
-            <img src="./assets/img/empresa.jpg" alt="Imagen de la empresa" class="empresaImg img-fluid" style="max-width: 100%;" data-aos="fade-right" data-aos-duration="1500">
-
+            
             <div class="empresaTexto d-flex flex-column align-items-start p-3" data-aos="fade-left" data-aos-duration="1200">
                 <img src="./assets/img/ico.png" width="40" alt="">
-                <h3 data-aos="fade-left" data-aos-duration="1000" >Solución digital</h3>
+                <h3 data-aos="fade-left" data-aos-duration="1000" style="            font-family: 'Orbitron', sans-serif;">Solución <b>DIGITAL</b></h3>
                 <p data-aos="fade-left" data-aos-duration="1500">Somos una pequeña empresa que nos dedicamos a soluciones digitales, dedicada a transformar tus ideas en realidad. Nos especializamos en la creación de aplicaciones web personalizadas incluyendo edición de video, diseño gráfico y animaciones 2D/3D. </p>
                 <a href="#contacto" target="_blank" rel="noopener noreferrer">
-                    <button data-aos="fade-left" data-aos-duration="2000" class="btn btn-primary mr-2">Contáctanos</button>
+                    <button data-aos="fade-left" data-aos-duration="2000" class="btn btn-info mr-2">Contáctanos</button>
                 </a>
                 
             </div>
+            <img src="./assets/img/empresa.jpg" alt="Imagen de la empresa" class="empresaImg img-fluid" style="max-width: 100%;" data-aos="fade-right" data-aos-duration="1500">
         </div>
     </section>
 
@@ -843,7 +903,7 @@ iframe{
                                         <textarea class="form-control" id="comentario" name="comentario" cols="60" rows="3" placeholder="Sobre qué quieres hablar?" style="resize: none;"></textarea>
                                     </div>
                                     <div class="form-group">
-                                        <button type="reset" class="btn btn-secondary">Limpiar Formulario</button>
+                                        <button type="reset" class="btn btn-secondary"  onclick="limpiarFormulario()">Limpiar Formulario</button>
                                         <button type="submit" class="btn btn-primary">Enviar Formulario</button>
                                     </div>
                                 </form>
@@ -981,6 +1041,10 @@ iframe{
         wp.addEventListener('mouseout', function(){
             mensajeWp.style.marginRight = '-20rem';
         })
+
+        function limpiarFormulario() {
+        document.getElementById("miFormulario").reset();
+    }
     </script>
 
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
